@@ -174,7 +174,7 @@ class InputModule(nn.Module):
 
         h0 = Variable(torch.zeros(2, batch_num, self.hidden_size).cuda())
         facts, hdn = self.gru(contexts, h0)
-        facts = facts[:, :, :hidden_size] + facts[:, :, hidden_size:]
+        facts = facts[:, :, :self.hidden_size] + facts[:, :, self.hidden_size:]
         return facts
 
 class AnswerModule(nn.Module):
