@@ -286,7 +286,7 @@ if __name__ == '__main__':
                         cnt += batch_size
 
                         if batch_idx % 20 == 0:
-                            print(f'[Task {task_id}, Epoch {epoch}] [Training] loss : {loss.data[0]: {10}.{8}}, acc : {total_acc / cnt: {5}.{4}}, batch_idx : {batch_idx}')
+                            print(f'[Task {task_id}, Epoch {epoch}] [Training] loss : {loss.item(): {10}.{8}}, acc : {total_acc / cnt: {5}.{4}}, batch_idx : {batch_idx}')
                         optim.step()
 
                     dset.set_mode('valid')
